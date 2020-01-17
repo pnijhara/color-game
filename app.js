@@ -1,16 +1,11 @@
 alert("connected!");
 const squares = document.querySelectorAll('.square');
-const colors = [
-    'rgb(0, 0, 255)',
-    'rgb(0, 255, 255)',
-    'rgb(255, 0, 255)',
-    'rgb(0, 255, 0)',
-    'rgb(255, 0, 0)',
-    'rgb(255, 255, 0)',
-];
+const colors = generateRandomColors();
 const pickedcolor = pickedColor();
 const colordisplay = document.getElementById("colordisplay");
 const message = document.getElementById("message");
+
+pickedColor()
 
 colordisplay.textContent = pickedcolor;
 // console.log(squares);
@@ -40,8 +35,23 @@ function changeColors(){
         squares[i].style.backgroundColor = pickedcolor;
     }
 }
-pickedColor()
+
 function pickedColor(){
     let random = Math.floor(Math.random() * colors.length + 1);
     return colors[random]
+}
+
+function generateRandomColors(){
+    let arr = [];
+    for(let i = 0; i < squares.length ; i++){
+        arr.push(randomColors());
+    }
+    return arr
+}
+
+function randomColors(){
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return "rgb("+ r + ", " + g + ", " + b +")"
 }
