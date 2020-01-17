@@ -36,7 +36,7 @@ for(var i = 0 ; i < squares.length; i++){
 }
 
 function changeColors(){
-    for(let i=0; i<colors.length; i++){
+    for(let i=0; i<squares.length; i++){
         squares[i].style.backgroundColor = pickedcolor;
     }
 }
