@@ -12,3 +12,10 @@ body{
   float: left;
   padding-bottom: 30%;
 }
+h1{
+    text-align: center;
+    color: whitesmoke
+}
+span{
+    color: azure;
+}

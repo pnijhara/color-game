@@ -8,8 +8,11 @@ const colors = [
     'rgb(255, 0, 0)',
     'rgb(255, 255, 0)',
 ];
-const pikedcolor = colors[4];
+const pickedcolor = colors[4];
+const colordisplay = document.getElementById("colordisplay");
+const message = document.getElementById("message");
 
+colordisplay.textContent = pickedcolor;
 // console.log(squares);
 
 for(var i = 0 ; i < squares.length; i++){
@@ -20,11 +23,11 @@ for(var i = 0 ; i < squares.length; i++){
     squares[i].addEventListener('click', function(){
         let clickedcolor = this.style.backgroundColor;
 
-        if(clickedcolor === pikedcolor){
-            alert('correct');
+        if(clickedcolor === pickedcolor){
+            message.textContent = "correct";
         }
         else{
-            alert("try again");
+            message.textContent = "try again";
             this.style.backgroundColor = '#2c2c55';
         }
 
