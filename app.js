@@ -8,7 +8,7 @@ const colors = [
     'rgb(255, 0, 0)',
     'rgb(255, 255, 0)',
 ];
-const pickedcolor = colors[4];
+const pickedcolor = pickedColor();
 const colordisplay = document.getElementById("colordisplay");
 const message = document.getElementById("message");
 
@@ -39,4 +39,9 @@ function changeColors(){
     for(let i=0; i<squares.length; i++){
         squares[i].style.backgroundColor = pickedcolor;
     }
+}
+pickedColor()
+function pickedColor(){
+    let random = Math.floor(Math.random() * colors.length + 1);
+    return colors[random]
 }
