@@ -1,19 +1,17 @@
 alert("connected!");
-const squares = document.querySelectorAll('.square');
-const colors = generateRandomColors();
-const pickedcolor = pickedColor();
-const colordisplay = document.getElementById("colordisplay");
-const message = document.getElementById("message");
+let squares = document.querySelectorAll('.square');
+let colors = generateRandomColors();
+let pickedcolor = pickedColor();
+let colordisplay = document.getElementById("colordisplay");
+let message = document.getElementById("message");
+let h1 = document.querySelector('h1');
 
 pickedColor()
 
 colordisplay.textContent = pickedcolor;
-// console.log(squares);
 
-for(var i = 0 ; i < squares.length; i++){
-    // console.log(squares[i]);
+for(let i = 0 ; i < squares.length; i++){
     squares[i].style.backgroundColor = colors[i];
-    console.log(squares[i].style.backgroundColor)
 
     squares[i].addEventListener('click', function(){
         let clickedcolor = this.style.backgroundColor;
@@ -21,6 +19,7 @@ for(var i = 0 ; i < squares.length; i++){
         if(clickedcolor === pickedcolor){
             message.textContent = "correct";
             changeColors();
+            h1.style.backgroundColor = clickedcolor;
         }
         else{
             message.textContent = "try again";
