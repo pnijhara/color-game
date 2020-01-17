@@ -25,6 +25,7 @@ for(var i = 0 ; i < squares.length; i++){
         }
         else{
             alert("try again");
+            this.style.backgroundColor = '#2c2c55';
         }
 
     });
