@@ -5,10 +5,20 @@ let pickedcolor = pickedColor();
 let colordisplay = document.getElementById("colordisplay");
 let message = document.getElementById("message");
 let h1 = document.querySelector('h1');
-
-pickedColor()
+let resetbutton = document.getElementById("reset");
 
 colordisplay.textContent = pickedcolor;
+
+resetbutton.addEventListener('click', function(){
+    colors = generateRandomColors();
+    pickedcolor = pickedColor();
+    colordisplay.textContent = pickedcolor;
+    for(let i = 0 ; i < squares.length; i++){
+        squares[i].style.backgroundColor = colors[i];
+    };
+    h1.style.backgroundColor = '#2c2c55';
+    message.textContent = '';
+})
 
 for(let i = 0 ; i < squares.length; i++){
     squares[i].style.backgroundColor = colors[i];
